@@ -40,16 +40,34 @@
   <div class="featured-links row">
     <a id="donate20" href="#" class="featured-link col-md-4 col-sm-4">
       <span>&nbsp;Good idea</span>
-      <strong>Donate CHF 20</strong>
+      <strong>Donate CHF 50</strong>
     </a>
     <a id="donate50" href="#" class="featured-link col-md-4 col-sm-4">
       <span>&nbsp;Great idea</span>
-      <strong>Donate CHF 50</strong>
+      <strong>Donate CHF 100</strong>
     </a>
     <a href="#" class="featured-link col-md-4 col-sm-4" data-toggle="modal" data-target="#DonateModal">
       <span>&nbsp;I want to make it special</span>
       <strong>Donate other amount</strong>
     </a>
+  </div>
+
+  <div class="hero-area">
+    <!-- Start Hero Slider -->
+    <div class="flexslider heroflex hero-slider" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
+      <ul class="slides">
+        <li class="parallax" style="background-image:url(/images/photo-2.jpeg)">
+
+        </li>
+        <li class="parallax" style="background-image:url(/images/photo-3.jpg)">
+
+        </li>
+        <li class="parallax" style="background-image:url(/images/photo-4.jpeg)">
+
+        </li>
+      </ul>
+    </div>
+    <!-- End Hero Slider -->
   </div>
 
   <script src="https://checkout.stripe.com/checkout.js"></script>
@@ -112,20 +130,6 @@
    });
 
    document.getElementById('donate20').addEventListener('click', function(e) {
-     donation_amount = 2000;
-
-     clearNotifications();
-
-     handler.open({
-       name: 'Donate CHF 20',
-       description: 'to Sabina\'s 60th birthday trip',
-       currency: 'chf',
-       amount: 2000
-     });
-     e.preventDefault();
-   });
-
-   document.getElementById('donate50').addEventListener('click', function(e) {
      donation_amount = 5000;
 
      clearNotifications();
@@ -134,7 +138,21 @@
        name: 'Donate CHF 50',
        description: 'to Sabina\'s 60th birthday trip',
        currency: 'chf',
-       amount: 5000
+       amount: donation_amount
+     });
+     e.preventDefault();
+   });
+
+   document.getElementById('donate50').addEventListener('click', function(e) {
+     donation_amount = 10000;
+
+     clearNotifications();
+
+     handler.open({
+       name: 'Donate CHF 100',
+       description: 'to Sabina\'s 60th birthday trip',
+       currency: 'chf',
+       amount: donation_amount
      });
      e.preventDefault();
    });
